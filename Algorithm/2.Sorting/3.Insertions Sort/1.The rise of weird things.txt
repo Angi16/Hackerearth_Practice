@@ -1,0 +1,46 @@
+    n=int(input())
+    freq=[int(x) for x in input().split()]
+     
+    k=int(input())
+    keysizes=[int(x) for x in input().split()]	
+     
+    if n>sum(keysizes):
+    	print('-1')
+    	
+    else:
+    	freq.sort()
+    	total=0
+    	h=1
+    	
+    	while len(freq)!=0:
+    		for i in range(len(keysizes)):
+    			try:
+    				total+=freq.pop()*h
+    				
+    			except IndexError:
+    				break
+    				
+    			keysizes[i] -= 1
+    		for e in keysizes:
+    			if e==0:
+    				keysizes.remove(e)
+    				
+    		h+=1
+    	print(total)    N = int(input(""))
+    arr = list(map(int,input().split(" ")))
+    a=[]
+    b=[]
+    for i in range(N):
+        if(arr[i]%2==0):
+            a.append(arr[i])
+        elif(arr[i]%2!=0):
+            b.append(arr[i])
+    a.sort()
+    b.sort()
+    for i in range(len(a)):
+        print(a[i],end=" ")
+    print(sum(a),end = " ")
+     
+    for i in range(len(b)):
+        print(b[i],end=" ")
+    print(sum(b))

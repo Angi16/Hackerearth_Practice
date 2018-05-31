@@ -1,0 +1,15 @@
+    t = int(input())
+     
+    for i in range(t):
+        n = int(input())
+        a=[int(number) for number in input().split()]
+        a.sort()
+        m = max(a)
+        sum1 =0
+        arraysum=0
+        
+        for i in range(n):
+            sum1+=(a[i]*i - arraysum)
+            arraysum+=a[i]
+            
+        print((sum1*m)%1000000007)

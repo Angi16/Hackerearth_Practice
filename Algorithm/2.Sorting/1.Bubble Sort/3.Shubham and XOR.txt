@@ -1,0 +1,8 @@
+from collections import Counter
+ 
+# Write your code here
+n = int(input().strip())
+ 
+c = Counter(input().strip().split())
+r = sum((v * (v - 1)) // 2 for v in c.values() if v > 1)
+print(r)

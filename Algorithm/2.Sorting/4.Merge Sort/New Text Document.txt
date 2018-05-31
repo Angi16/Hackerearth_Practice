@@ -1,0 +1,5 @@
+num_of_associations = int(input())
+worker_speeds = list(map(int, input().split()))
+worker_speeds = sorted(worker_speeds)
+grp = list(zip(*(iter(worker_speeds),) * 2))
+print(sum([pair[0] for pair in grp]))

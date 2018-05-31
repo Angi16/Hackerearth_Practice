@@ -1,0 +1,29 @@
+    n=int(input())
+    freq=[int(x) for x in input().split()]
+     
+    k=int(input())
+    keysizes=[int(x) for x in input().split()]	
+     
+    if n>sum(keysizes):
+    	print('-1')
+    	
+    else:
+    	freq.sort()
+    	total=0
+    	h=1
+    	
+    	while len(freq)!=0:
+    		for i in range(len(keysizes)):
+    			try:
+    				total+=freq.pop()*h
+    				
+    			except IndexError:
+    				break
+    				
+    			keysizes[i] -= 1
+    		for e in keysizes:
+    			if e==0:
+    				keysizes.remove(e)
+    				
+    		h+=1
+    	print(total)
